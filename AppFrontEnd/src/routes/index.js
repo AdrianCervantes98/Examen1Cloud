@@ -8,4 +8,9 @@ router.get('/autor', (req, res) => {
     res.send({ alumno: "AACA", servicio: "EKS en AWS"})
 });
 
+router.post('/analyze', (req, res) => {
+    const input = req.body.inputText;
+    console.log(input);
+});
+
 module.exports = router;
