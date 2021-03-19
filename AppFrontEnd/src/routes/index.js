@@ -12,6 +12,21 @@ router.get('/autor', (req, res) => {
 
 //https://appibm.us-south.cf.appdomain.cloud/analyze
 
+router.post('/analyze', async (req, res) => {
+    const input = {
+    receivedText: JSON.stringify(req.body.inputText),
+    }
+    console.log(input)
+    let result = await doRequest(input);
+    console.log(result);
+   });
+    
+   async function doRequest(payload) {
+    console.log(payload);
+    let res = await axios.post("https://appibm.us-south.cf.appdomain.cloud/analyze", payload);
+    return res.data;
+   }
+/*
 router.post('/analyze', (req, res) => {
     //const input = req.body.inputText;
     const input = JSON.stringify({
@@ -26,9 +41,11 @@ router.post('/analyze', (req, res) => {
 
 async function doRequest(payload) {
     console.log("entré a la func");
+    console.log(payload);
     let res = await axios.post("https://appibm.us-south.cf.appdomain.cloud/analyze", payload);
+    console.log(res.data.analyzedText);
     return res.data;
-}
+}*/
 
 
 
