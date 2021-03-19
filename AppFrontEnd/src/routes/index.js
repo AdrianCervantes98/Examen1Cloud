@@ -9,7 +9,7 @@ router.get('/autor', (req, res) => {
 });
 
 router.post('/analyze', (req, res) => {
-    const input = req.body.inputText;
+    export const input = req.body.inputText;
     console.log(input);
 });
 
