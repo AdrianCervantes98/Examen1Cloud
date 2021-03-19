@@ -1,0 +1,14 @@
+applications:
+- buildpack: sdk-for-nodejs
+  command: npm start
+  domain: null
+  env:
+    OPTIMIZE_MEMORY: true
+  host: null
+  instances: 1
+  memory: 256M
+  name: toneanalyzerexamen
+  random-route: true
+  routes:
+  - route: ToneAnalyzerApp.us-south.cf.appdomain.cloud
+  timeout: 180
